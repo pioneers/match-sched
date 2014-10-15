@@ -48,15 +48,19 @@ h1, h2 {
 }
 #chart-label-25 {
   top: 75%;
+  transition-delay: 0.25s;
 }
 #chart-label-50 {
   top: 50%;
+  transition-delay: 0.5s;
 }
 #chart-label-75 {
   top: 25%;
+  transition-delay: 0.75s;
 }
 #chart-label-100 {
   top: 0%;
+  transition-delay: 1s;
 }
 
 #chart-raised {
@@ -81,5 +85,13 @@ h1, h2 {
   text-align: center;
 }
 #chart-raised-label.visible {
+  opacity: 1;
+}
+
+#donation-metadata {
+  opacity: 0;
+  transition: opacity 0.5s ease-in 4s;
+}
+#donation-metadata.visible {
   opacity: 1;
 }

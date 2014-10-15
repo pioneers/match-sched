@@ -27,6 +27,7 @@ function parseWorkbook(workbook) {
     var goal = data['B1']['w'];
     var raised = data['B2']['w'];
     var togo = data['B3']['w'];
+
     $('#summary').text('$' + raised + ' out of $' + goal);
 
     var transitionDuration = Math.min(Math.max(1, (4 * raised / goal)), 4);
@@ -40,6 +41,12 @@ function parseWorkbook(workbook) {
     var raisedHeight = Math.min(400, 400 * raised / goal);
     $('#chart-raised').css('height', raisedHeight + 'px').css('transition-duration', transitionDuration + 's');
     $('#chart-raised-label').text('$' + raised).css('transition-delay', transitionDuration + 's').addClass('visible');
+
+    var individualDonations = data['B9']['w'];
+    var averageDonation = data['B10']['w'];
+    $('#individual-donations').text('Individual donations: ' + individualDonations);
+    $('#average-donation').text('Average donation: ' + averageDonation);
+    $('#donation-metadata').addClass('visible').css('transition-delay', (transitionDuration + 1) + 's');
 }
 
 $(function() {
