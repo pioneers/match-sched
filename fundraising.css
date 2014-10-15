@@ -1,0 +1,85 @@
+html, body {
+  font-family: verdana;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+h1, h2 {
+  margin: 5px;
+}
+
+#chart {
+  background-color: rgb(241, 194, 50);
+  height: 400px;
+  width: 100px;
+  position: relative;
+  margin: 20px auto;
+}
+#chart-labels {
+  position: absolute;
+  left: -50px;
+  width: 50px;
+  font-size: 12px;
+  height: 100%;
+}
+#chart-labels div {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  padding-right: 5px;
+  border-top: 1px solid #000;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+}
+#chart-labels div.visible {
+  opacity: 1;
+}
+#chart-label-25 {
+  top: 75%;
+}
+#chart-label-50 {
+  top: 50%;
+}
+#chart-label-75 {
+  top: 25%;
+}
+#chart-label-100 {
+  top: 0%;
+}
+
+#chart-raised {
+  background-color: rgb(7, 55, 99);
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  transition: height 1.5s ease-out;
+}
+#chart-raised-label-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-top: 5px;
+}
+#chart-raised-label {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  transition-delay: 1.5s;
+  color: rgb(241, 194, 50);
+  text-align: center;
+}
+#chart-raised-label.visible {
+  opacity: 1;
+}

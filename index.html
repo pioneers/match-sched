@@ -1,1 +1,30 @@
-Hello world!
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.11/xlsx.core.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+    <script type="text/javascript" src="fundraising.js"></script>
+    <link rel="stylesheet" type="text/css" href="fundraising.css">
+  </head>
+  <body>
+    <h1>Foundation/Scholarship Fundraising Drive</h1>
+    <h2>Fundraising Deadline: <span id="days-remaining"></span></h2>
+    <h2 id="summary"></h2>
+
+    <div id="chart">
+      <div id="chart-labels">
+        <div id="chart-label-25"></div>
+        <div id="chart-label-50"></div>
+        <div id="chart-label-75"></div>
+        <div id="chart-label-100"></div>
+      </div>
+      <div id="chart-raised">
+        <div id="chart-raised-label-container">
+          <div id="chart-raised-label">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
