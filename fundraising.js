@@ -29,7 +29,7 @@ function parseWorkbook(workbook) {
     var togo = data['B3']['w'];
 
     $('#summary').text('$' + raised + ' out of $' + goal);
-    $('#goal').text('Fundraising Goal: $' + goal);
+    $('#goal').text('$' + goal);
 
     var transitionDuration = Math.min(Math.max(1, (4 * raised / goal)), 4);
 

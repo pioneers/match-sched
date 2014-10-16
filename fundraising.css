@@ -1,10 +1,18 @@
 html, body {
-  font-family: verdana;
-  margin: 0 auto;
+  background-color: #fafafa;
+  font-family: arial;
+  margin: 0;
+  padding: 0;
+}
+body > .container {
   max-width: 800px;
   text-align: center;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px #eee;
+  border: 1px solid #eee;
+  padding-bottom: 100px;
+  margin: 0 auto;
 }
-
 h1 {
   font-size: 24px;
 }
@@ -14,6 +22,11 @@ h2 {
 }
 h1, h2 {
   margin: 5px;
+}
+#logo {
+  width: 64px;
+  height: 64px;
+  margin-top: 5px;
 }
 
 #chart {
