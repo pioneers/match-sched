@@ -51,7 +51,17 @@ function parseWorkbook(workbook) {
 }
 
 $(function() {
-  var daysRemaining = moment('2014-12-31').diff(moment(), 'days');
-  $('#days-remaining').text(moment('2014-12-31').fromNow());
+  var daysRemaining = moment('2015-01-01').diff(moment(), 'days');
+  var suffix = "days";
+  if (Math.abs(daysRemaining) == 1) {
+    suffix = "day";
+  }
+  if (daysRemaining == 0) {
+    $('#days-remaining').text(moment('2015-01-01').fromNow());
+  } else if (daysRemaining >= 0) {
+    $('#days-remaining').text(daysRemaining + " " + suffix);
+  } else {
+    $('#days-remaining').text((-daysRemaining) + " " + suffix + " ago");
+  }
   init();
 });
