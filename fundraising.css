@@ -108,3 +108,7 @@ h1, h2 {
 #donation-metadata.visible {
   opacity: 1;
 }
+#alumni-message {
+  margin-top: 10px auto;
+  max-width: 430px;
+}

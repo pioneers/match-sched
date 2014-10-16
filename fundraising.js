@@ -45,8 +45,8 @@ function parseWorkbook(workbook) {
 
     var individualDonations = data['B9']['w'];
     var averageDonation = data['B10']['w'];
-    $('#individual-donations').text('Individual donations: ' + individualDonations);
-    $('#average-donation').text('Average donation: ' + averageDonation);
+    $('#individual-donations').text(individualDonations);
+    $('#average-donation').text(averageDonation);
     $('#donation-metadata').addClass('visible').css('transition-delay', (transitionDuration + 1) + 's');
 }
 
