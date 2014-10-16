@@ -30,11 +30,23 @@ h1, h2 {
 }
 
 #chart {
-  background-color: rgb(241, 194, 50);
   height: 400px;
   width: 100px;
   position: relative;
   margin: 20px auto;
+}
+#chart-background {
+  background: linear-gradient(180deg, rgb(241, 194, 50), rgba(241, 194, 50, 0.5));
+  height: 0px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 1.25s ease-in, height 1.25s ease;
+}
+#chart-background.visible {
+  opacity: 1;
+  height: 400px;
 }
 #chart-labels {
   position: absolute;
@@ -77,12 +89,13 @@ h1, h2 {
 }
 
 #chart-raised {
-  background-color: rgb(7, 55, 99);
+  background: linear-gradient(180deg, rgb(9, 80, 145), rgb(7, 55, 99));
   width: 100px;
   position: absolute;
   bottom: 0;
   height: 0;
-  transition: height 1.5s ease-out;
+  opacity: 0;
+  transition: height 1.5s ease-out 1s, opacity 1.5s ease 0.5s;
 }
 #chart-raised-label-container {
   position: absolute;
@@ -91,13 +104,16 @@ h1, h2 {
   padding-top: 5px;
 }
 #chart-raised-label {
-  opacity: 0;
-  transition: opacity 0.5s ease-in;
-  transition-delay: 1.5s;
+  transition: opacity 0.5s ease-in 1.5s;
   color: rgb(241, 194, 50);
   text-align: center;
+  opacity: 0;
 }
-#chart-raised-label.visible {
+#chart-raised.visible {
+  opacity: 1;
+}
+#chart-raised.visible #chart-raised-label {
+  transition: opacity 1.5s ease 1s;
   opacity: 1;
 }
 

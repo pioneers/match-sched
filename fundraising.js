@@ -40,17 +40,20 @@ function parseWorkbook(workbook) {
     $('#chart-labels div').addClass('visible');
 
     var raisedHeight = Math.min(400, 400 * raised / goal);
-    $('#chart-raised').css('height', raisedHeight + 'px').css('transition-duration', transitionDuration + 's');
-    $('#chart-raised-label').text('$' + raised).css('transition-delay', transitionDuration + 's').addClass('visible');
+    $('#chart-raised').css('height', raisedHeight + 'px').css('transition-duration', transitionDuration + 's').addClass('visible');
+    $('#chart-raised-label').text('$' + raised).css('transition-delay', (transitionDuration + 1) + 's');
 
     var individualDonations = data['B9']['w'];
     var averageDonation = data['B10']['w'];
     $('#individual-donations').text(individualDonations);
     $('#average-donation').text(averageDonation);
-    $('#donation-metadata').addClass('visible').css('transition-delay', (transitionDuration + 1) + 's');
+    $('#donation-metadata').addClass('visible').css('transition-delay', (transitionDuration + 1.5) + 's');
 }
 
 $(function() {
+  setTimeout(function() {
+    $('#chart-background').addClass('visible');
+  }, 0);
   var daysRemaining = moment('2015-01-01').diff(moment(), 'days');
   var suffix = "days";
   if (Math.abs(daysRemaining) == 1) {
