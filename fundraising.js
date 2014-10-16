@@ -1,6 +1,5 @@
-function init() {
+function makeExcelRequest(url, successCallback, errorCallback) {
   /* set up XMLHttpRequest */
-  var url = "fundraising.xlsx";
   var oReq = new XMLHttpRequest();
   oReq.open("GET", url, true);
   oReq.responseType = "arraybuffer";
@@ -15,14 +14,28 @@ function init() {
     var bstr = arr.join("");
 
     /* Call XLSX */
-    var workbook = XLSX.read(bstr, {type:"binary"});
-    parseWorkbook(workbook);
+    try {
+      var workbook = XLSX.read(bstr, {type:"binary"});
+      successCallback(workbook);
+      $('#error').hide();
+    } catch(e) {
+      $('#error').show();
+    }
   }
+  oReq.onreadystatechange = function (oEvent) {
+    if (oReq.readyState === 4) {
+      if (oReq.status !== 200) {
+        errorCallback();
+      }
+    }
+  };
 
   oReq.send();
 }
 
 function parseWorkbook(workbook) {
+  $('#chart-background').addClass('visible');
+
   var data = workbook['Sheets']['website'];
   var goal = data['B1']['w'];
   var raised = data['B2']['w'];
@@ -51,9 +64,6 @@ function parseWorkbook(workbook) {
 }
 
 $(function() {
-  setTimeout(function() {
-    $('#chart-background').addClass('visible');
-  }, 0);
   var daysRemaining = moment('2015-01-01').diff(moment(), 'days');
   var suffix = "days";
   if (Math.abs(daysRemaining) == 1) {
@@ -66,5 +76,11 @@ $(function() {
   } else {
     $('#days-remaining').text((-daysRemaining) + " " + suffix + " ago");
   }
-  init();
+  makeExcelRequest('fundraising.xlsx', parseWorkbook, function() {
+    // Failed to proxy - get backup exported xlsx file.
+    makeExcelRequest('fundraising_backup.xlsx', parseWorkbook, function() {
+      // Failed to even get backup - network error.
+      $('#error').show();
+    });
+  });
 });

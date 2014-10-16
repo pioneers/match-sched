@@ -4,6 +4,12 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+#error {
+    display: none;
+    color: red;
+}
+
 .main {
     max-width: 800px;
     text-align: center;
