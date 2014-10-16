@@ -109,6 +109,6 @@ h1, h2 {
   opacity: 1;
 }
 #alumni-message {
-  margin-top: 10px auto;
+  margin: 10px auto;
   max-width: 430px;
 }
