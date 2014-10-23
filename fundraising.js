@@ -60,7 +60,6 @@ function parseWorkbook(workbook) {
   var averageDonation = data['B10']['w'];
   $('#individual-donations').text(individualDonations);
   $('#average-donation').text(averageDonation);
-  $('#donation-metadata').addClass('visible').css('transition-delay', (transitionDuration + 1.5) + 's');
 }
 
 $(function() {
