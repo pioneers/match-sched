@@ -18,7 +18,7 @@ function makeExcelRequest(url, successCallback, errorCallback) {
       var workbook = XLSX.read(bstr, {type:"binary"});
       successCallback(workbook);
       $('#error').hide();
-    } catch(e) {
+    } catch(err) {
       $('#error').show();
     }
   }
