@@ -85,6 +85,7 @@ h1 {
 
 /* MATCH TABLE STYLES */
 
+/*TODO ensure that the table is always full width somehow */
 .match-table {
     border-collapse: collapse;
     width: 100%;
@@ -94,18 +95,19 @@ h1 {
 }
 
 .match-table-head {
-    background-color: #ABABAB;
+    background-color: #BBBDBD;
     font-size: 1em;
 }
 
-.match-table-head-row {
-}
-
-.match-table-head-cell {
+.match-table-head-row th {
     padding: 1em;
 }
 
-.match-table-body {
+/*.match-table-head-cell {
+    padding: 1em;
+}
+
+*/.match-table-body {
     padding: 2em;
     /*border: 1px solid #ccc;*/
 }
@@ -114,11 +116,13 @@ h1 {
     border-bottom: 1px solid #ccc;
 }
 
+/* TODO find pretty and consistent way to highlight */
 .match-table-row:hover {
-    background-color: #EFEFEF;
+    /*background-color: #EFEFEF;*/
+    opacity: 0.8;
 }
 
-.match-table-cell {
+.match-table-row td {
     padding: 1em;
 }
 
@@ -133,7 +137,7 @@ h1 {
 
 /* TEAM NAMES SIDEBAR */
 
-#sidebar {
+#team-sidebar {
     box-sizing: border-box;
     height: 100%;
     width: 200px;
@@ -143,7 +147,7 @@ h1 {
     overflow-y: scroll;
 }
 
-#sidebar-title {
+#team-sidebar-title {
     border-bottom: 1px dotted #cccccc;
     font-size: 1em;
     margin-bottom: 10px;

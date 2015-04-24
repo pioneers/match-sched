@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Qualification Matches</title>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- FONT AWESOME -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/font-awesome-4.3.0/css/font-awesome.min.css">
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.11/xlsx.core.min.js"></script> -->
+    <!-- JQUERY -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script> -->
+    <!-- TABLETOP -->
+    <script type="text/javascript" src="assets/js/tabletop/tabletop.js"></script>
+    <!-- CUSTOM SCRIPT -->
     <script type="text/javascript" src="assets/js/match_sched.js"></script>
-    <script type="text/javascript" src="assets/js/tabletop.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,400" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="assets/css/match_sched.css">
@@ -19,32 +24,10 @@
   </head>
   <body>
     <!-- SIDEBAR -->
-    <div id="sidebar">
-      <div id="sidebar-title">Team Names</div>
-      <div id="sidebar-content">
-        <div class="sidebar-team">1: Albany</div>
-        <div class="sidebar-team">2: Oakland Tech</div>
-        <div class="sidebar-team">11: Team Awesomesauciest</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
-        <div class="sidebar-team">11: Team Awesome</div>
+    <div id="team-sidebar">
+      <div id="team-sidebar-title">Team Names</div>
+      <div id="team-sidebar-content">
+        <div class="placeholder sidebar-team">1: Albany</div>
       </div>
     </div>
 
@@ -90,16 +73,7 @@
         </tfoot>
  -->
         <tbody class="match-table-body">
-          <tr class="match-table-row">
-            <td class="match-table-cell">1</td>
-            <td class="match-table-cell">12:00 PM</td>
-            <td class="blue match-table-cell">1: Albany</td>
-            <td class="blue match-table-cell">2: Oakland Tech</td>
-            <td class="match-table-cell">10/20</td>
-            <td class="gold match-table-cell">11: Team Awesome</td>
-            <td class="gold match-table-cell">11: Team Awesome</td>
-          </tr>
-          <tr class="match-table-row">
+          <tr class="placeholder match-table-row">
             <td class="match-table-cell">1</td>
             <td class="match-table-cell">12:00 PM</td>
             <td class="blue match-table-cell">1: Albany</td>
@@ -113,21 +87,22 @@
       </table>
     </div>
 
-  <script type="text/javascript">
-    window.onload = function() { init() };
+    <!-- <script type="text/javascript">
+      window.onload = function() { init() };
 
-    var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE&output=html';
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1vTvnO-FRjo5bbetFBYyFI3R5z0vlcd0zCXlpOJ2XDes/pubhtml';
 
-    function init() {
-      Tabletop.init( { key: public_spreadsheet_url,
-                       callback: showInfo,
-                       simpleSheet: true } )
-    }
+      function init() {
+        Tabletop.init( { key: public_spreadsheet_url,
+                         callback: showInfo,
+                         simpleSheet: true } )
+      }
 
-    function showInfo(data, tabletop) {
-      alert("Successfully processed!")
-      console.log(data);
-    }
-  </script>
+      function showInfo(data, tabletop) {
+        alert("Successfully processed!")
+        console.log(data);
+      }
+    </script>
+ -->
   </body>
 </html>
