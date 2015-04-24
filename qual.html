@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Qualification Matches</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.11/xlsx.core.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script> -->
+    <script type="text/javascript" src="assets/js/match_sched.js"></script>
+    <script type="text/javascript" src="assets/js/tabletop.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,400" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="assets/css/match_sched.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+      <div id="sidebar-title">Team Names</div>
+      <div id="sidebar-content">
+        <div class="sidebar-team">1: Albany</div>
+        <div class="sidebar-team">2: Oakland Tech</div>
+        <div class="sidebar-team">11: Team Awesomesauciest</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+        <div class="sidebar-team">11: Team Awesome</div>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div id="main-content">
+      <div id="header">
+        <!-- <img src="pie_logo.png" id="logo"> -->
+        <h1>Qualification Matches</h1>
+      </div>
+
+      <ul id="tab-bar">
+        <li class="current tab-item"><a href="qual.html">Qualification Matches</a></li>
+        <li class="tab-item"><a href="elim.html">Elimination Matches</a></li>
+        <li class="tab-item"><a href="ranking.html">Team Rankings</a></li>
+        <li class="tab-item"><a href="live.html">Live Stream</a></li>
+        <li class="tab-item"><a href="live.html">My Team's Stats</a></li>
+      </ul>
+
+      <div id="error">
+        Sorry, there was an error. Please try again later.
+      </div>
+
+
+      <table class="match-table" id="qual-table">
+        <thead class="match-table-head">
+          <tr class="match-table-head-row">
+            <th class="match-table-head-cell">Match</th>
+            <th class="match-table-head-cell">Time</th>
+            <th class="match-table-head-cell" colspan="2">Blue Alliance</th>
+            <th class="match-table-head-cell">Score</th>
+            <th class="match-table-head-cell" colspan="2">Gold Alliance</th>
+          </tr>
+        </thead>
+
+<!--         <tfoot>
+          <tr>
+            <td>Match</td>
+            <td>Time</td>
+            <td colspan="2">Blue Alliance</td>
+            <td>Score</td>
+            <td colspan="2">Gold Alliance</td>
+          </tr>
+        </tfoot>
+ -->
+        <tbody class="match-table-body">
+          <tr class="match-table-row">
+            <td class="match-table-cell">1</td>
+            <td class="match-table-cell">12:00 PM</td>
+            <td class="blue match-table-cell">1: Albany</td>
+            <td class="blue match-table-cell">2: Oakland Tech</td>
+            <td class="match-table-cell">10/20</td>
+            <td class="gold match-table-cell">11: Team Awesome</td>
+            <td class="gold match-table-cell">11: Team Awesome</td>
+          </tr>
+          <tr class="match-table-row">
+            <td class="match-table-cell">1</td>
+            <td class="match-table-cell">12:00 PM</td>
+            <td class="blue match-table-cell">1: Albany</td>
+            <td class="blue match-table-cell">2: Oakland Tech</td>
+            <td class="match-table-cell">10/20</td>
+            <td class="gold match-table-cell">11: Team Awesome</td>
+            <td class="gold match-table-cell">11: Team Awesome</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  <script type="text/javascript">
+    window.onload = function() { init() };
+
+    var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE&output=html';
+
+    function init() {
+      Tabletop.init( { key: public_spreadsheet_url,
+                       callback: showInfo,
+                       simpleSheet: true } )
+    }
+
+    function showInfo(data, tabletop) {
+      alert("Successfully processed!")
+      console.log(data);
+    }
+  </script>
+  </body>
+</html>

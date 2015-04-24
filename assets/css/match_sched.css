@@ -1,0 +1,162 @@
+/* BASICS */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #4a4a4a;
+    height: 100%;
+}
+
+* {
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+}
+
+.img-scaled-wh {
+    height: 100%;
+    width: 100%;
+}
+
+.clearfix {
+    overflow: auto;
+    zoom: 1;
+}
+
+/*===================================================*/
+
+/* HEADER/TAB BAR */
+#error {
+    display: none;
+    color: red;
+}
+
+ul a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#tab-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 25px;
+}
+
+.tab-item {
+    display: inline;
+    padding: 5px 0;
+    margin: 0 10px;
+}
+
+.tab-item:hover {
+    color: #231F5A;
+    border-bottom: 3px solid #231F5A;
+}
+
+.tab-item:first-child {
+    padding: 5px 0;
+    margin-left: 0;
+}
+
+.tab-item:last-child {
+    padding: 5px 0;
+    margin-right: 0;
+}
+
+.current {
+    font-weight: bold;
+    color: #231F5A;
+    border-bottom: 3px solid #231F5A;
+}
+
+#main-content {
+    max-width: 960px;
+    margin-right: 0;
+    margin-left: 225px;
+    padding-top: 25px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+/* MATCH TABLE STYLES */
+
+.match-table {
+    border-collapse: collapse;
+    width: 100%;
+    white-space: wrap;
+    vertical-align: center;
+    text-align: center;
+}
+
+.match-table-head {
+    background-color: #ABABAB;
+    font-size: 1em;
+}
+
+.match-table-head-row {
+}
+
+.match-table-head-cell {
+    padding: 1em;
+}
+
+.match-table-body {
+    padding: 2em;
+    /*border: 1px solid #ccc;*/
+}
+
+.match-table-row {
+    border-bottom: 1px solid #ccc;
+}
+
+.match-table-row:hover {
+    background-color: #EFEFEF;
+}
+
+.match-table-cell {
+    padding: 1em;
+}
+
+.blue {
+    background-color: #9ED5E8;
+}
+
+.gold {
+    background-color: #FFFAB1;
+}
+
+
+/* TEAM NAMES SIDEBAR */
+
+#sidebar {
+    box-sizing: border-box;
+    height: 100%;
+    width: 200px;
+    padding: 20px;
+    background-color: #F2F2F2;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+#sidebar-title {
+    border-bottom: 1px dotted #cccccc;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.sidebar-team {
+    background-color: #DDDDDD;
+    padding: 3px;
+    margin: 10px 0;
+    border-radius: 3px;
+}
+
+.sidebar-team:hover {
+    background-color: #C3C3C3;
+    cursor: pointer;
+}
