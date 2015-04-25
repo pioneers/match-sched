@@ -72,6 +72,8 @@ $(document).ready(function () {
     debug: true
   });
 
+  $("#elim-table").stickyTableHeaders();
+
   // highlight appropriate cells in the table when hovering over team names in sidebar
   $("#team-sidebar-content").on("mouseenter", ".team-link", function(event) {
     event.preventDefault();
