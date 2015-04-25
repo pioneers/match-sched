@@ -5,9 +5,10 @@ var elimSheetName = 'elim_matches';
 var rankSheetName = 'team_rankings';
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1vTvnO-FRjo5bbetFBYyFI3R5z0vlcd0zCXlpOJ2XDes/pubhtml';
 
+/* -------- JQUERY FUNCTIONS START HERE -------- */
+
 // Fills in the table and sidebar with the most up-to-date information from the Google spreadsheet.
 function displayData(data, tabletop) {
-  // console.log("all data:", data);
 
   var schoolData = data[schoolSheetName]; // Tabletop object containing qualification matches
   var qualData = data[qualSheetName]; // Tabletop object containing qualification matches
@@ -16,7 +17,6 @@ function displayData(data, tabletop) {
 
   var numSchools = schoolData.elements.length;
   var schools = schoolData.all();
-  // console.log("schools:", schools);
 
   /* -------- DOM MANIPULATION BEGINS HERE -------- */
 
@@ -24,9 +24,6 @@ function displayData(data, tabletop) {
   $(".placeholder").remove();
 
   // add sidebar elements and ids for the different schools
-  // console.log("schoolData:", schoolData);
-  // console.log("numSchools:", numSchools);
-
   for (var i = 0; i < numSchools; i ++) {
     var teamName = schools[i]['TeamName'];
     var teamNum = schools[i]['TeamNumber'];
@@ -38,10 +35,7 @@ function displayData(data, tabletop) {
   }
 
   // qualification match data
-  // console.log("qualData: ", qualData);
   var qualMatches = qualData.all();
-  // console.log("qualMatches:", qualMatches);
-
   for (var i = 0; i < qualMatches.length; i ++) {
     $("#qual-table > tbody:last").append("<tr class='match-table-row'>" + // add a new table row
       "<td>" + qualMatches[i]['MatchNumber'] + "</td>" + //match number
@@ -53,8 +47,9 @@ function displayData(data, tabletop) {
       "<td class='gold team" + qualMatches[i]['Gold2Number'] + "cell'>" + qualMatches[i]['Gold2Number'] + ": " + qualMatches[i]['Gold2Name'] + "</td>" + // gold 2
       "</tr>");
   }
-
 };
+
+/* -------- DOCUMENT READY FUNCTION -------- */
 
 $(document).ready(function () {
   Tabletop.init({
@@ -65,39 +60,34 @@ $(document).ready(function () {
   });
 
   // highlight appropriate cells in the table when hovering over team names in sidebar
-  $(".team-link").hover(function() {                  // mousein: highlight
-    alert("made it to hover function");
-    this.addClass("highlighted");
-    var teamCells = $("." + this.attr("id") + "cell");
-    for (var i = 0; i < teamCells.length; i++) {
-      teamCells[i].addClass("highlighted");
-    }
-  }, function() {                                     // mouseout: unhighlight
-    this.removeClass("highlighted");
-    var teamCells = $("." + this.attr("id") + "cell");
-    for (var i = 0; i < teamCells.length; i++) {
-      teamCells[i].removeClass("highlighted");
+  $("#team-sidebar-content").on("mouseenter", ".team-link", function(event) {
+    event.preventDefault();
+    var teamCells = $("." + $(this).attr("id") + "cell");
+    teamCells.addClass("highlighted");
+  });
+
+  $("#team-sidebar-content").on("mouseleave", ".team-link", function(event) {
+    event.preventDefault();
+    if (!($(this).hasClass("highlighted"))) {
+      var teamCells = $("." + $(this).attr("id") + "cell");
+      teamCells.removeClass("highlighted");
     }
   });
 
-  $(".team-link").click(function() {
-    alert("clicked!!!");
-    if (this.hasClass("highlighted")) {
+  $("#team-sidebar-content").on("click", ".team-link", function(event) {
+    event.preventDefault();
+    if ($(this).hasClass("highlighted")) {
       // unhighlight this link
-      this.removeClass("highlighted");
+      $(this).removeClass("highlighted");
       // unhighlight table cells
-      var teamCells = $("." + this.attr("id") + "cell");
-      for (var i = 0; i < teamCells.length; i++) {
-        teamCells[i].removeClass("highlighted");
-      }
+      var teamCells = $("." + $(this).attr("id") + "cell");
+      teamCells.removeClass("highlighted");
     } else {
       // highlight this link
-      this.addClass("highlighted");
+      $(this).addClass("highlighted");
       // highlight table cells
-      var teamCells = $("." + this.attr("id") + "cell");
-      for (var i = 0; i < teamCells.length; i++) {
-        teamCells[i].addClass("highlighted");
-      }
+      var teamCells = $("." + $(this).attr("id") + "cell");
+        teamCells.addClass("highlighted");
     }
   });
 });
