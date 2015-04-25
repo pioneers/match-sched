@@ -94,6 +94,10 @@ h1 {
     text-align: center;
 }
 
+.placeholder {
+    opacity: 0;
+}
+
 .match-table-head {
     background-color: #BBBDBD;
     font-size: 1em;
@@ -103,11 +107,7 @@ h1 {
     padding: 1em;
 }
 
-/*.match-table-head-cell {
-    padding: 1em;
-}
-
-*/.match-table-body {
+.match-table-body {
     padding: 2em;
     /*border: 1px solid #ccc;*/
 }
@@ -134,6 +134,18 @@ h1 {
     background-color: #FFFAB1;
 }
 
+.blue.highlighted {
+    background-color: #48B7E3;
+}
+
+.gold.highlighted {
+    background-color: #FFF545;
+}
+
+.highlighted {
+    background-color: orange;
+}
+
 
 /* TEAM NAMES SIDEBAR */
 
@@ -153,14 +165,14 @@ h1 {
     margin-bottom: 10px;
 }
 
-.sidebar-team {
+.team-link {
     background-color: #DDDDDD;
     padding: 3px;
     margin: 10px 0;
     border-radius: 3px;
 }
 
-.sidebar-team:hover {
+.team-link:hover, .team-link.highlighted {
     background-color: #C3C3C3;
     cursor: pointer;
 }
