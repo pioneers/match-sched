@@ -20,6 +20,7 @@ th {
 .img-scaled-wh {
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .clearfix {
@@ -47,6 +48,8 @@ ul a {
     padding-bottom: 6px;
     border-bottom: 1px solid #cccccc;
     margin-bottom: 25px;
+    overflow-x: scroll;
+    width: 100%;
 }
 
 .tab-item {
@@ -83,9 +86,29 @@ ul a {
     padding-top: 25px;
 }
 
+#header {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
 h1 {
     margin-top: 0;
 }
+
+#logo {
+    height: 2em;
+    width: 2em;
+    margin: 3px 5px;
+    float: left;
+    position: relative;
+    top: 50%;
+/*    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+*/}
 
 /* MATCH TABLE STYLES */
 
