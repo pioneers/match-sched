@@ -224,3 +224,13 @@ h1 {
     background-color: #C3C3C3;
     cursor: pointer;
 }
+
+
+/* TWITCH LIVE STREAM */
+#twitch-stream {
+    text-align: center;
+}
+
+#twitch-stream a {
+    text-align: center;
+}

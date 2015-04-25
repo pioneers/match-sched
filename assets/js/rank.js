@@ -59,6 +59,8 @@ $(document).ready(function () {
     simpleSheet: false,
     debug: true
   });
+
+  $("#rank-table").stickyTableHeaders();
 });
 
 
