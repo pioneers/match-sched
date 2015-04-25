@@ -47,6 +47,20 @@ function displayData(data, tabletop) {
       "<td class='gold team" + qualMatches[i]['Gold2Number'] + "cell'>" + qualMatches[i]['Gold2Number'] + ": " + qualMatches[i]['Gold2Name'] + "</td>" + // gold 2
       "</tr>");
   }
+
+  // boldface the current match, if there is one
+  try {
+    for (var i = 0; i < qualMatches.length; i ++) {
+      console.log("Iterating through loop:", i);
+      console.log("current match data:", qualMatches[i]['CurrentMatch']);
+      var nthChild = qualMatches[i]['CurrentMatch'];
+      if (nthChild && nthChild == nthChild) {
+        console.log("found a row:", nthChild);
+        $("#qual-table tr:nth-child(" + i+1 + ")").addClass("current-match");
+      }
+    }
+  } catch(e) {}
+  
 };
 
 /* -------- DOCUMENT READY FUNCTION -------- */
