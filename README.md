@@ -17,3 +17,4 @@
 - Better colors :<<<
 - ~~Error/unavailable message~~
 - ~~Sticky table header~~
+- Team stats as `iframe` instead of external link - don't think this is possible though

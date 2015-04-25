@@ -40,7 +40,7 @@ th {
     margin: 0 auto;
     text-align: center;
     position: relative;
-    top: calc(0.5*(100vh - 65px));
+    top: calc(0.5*(100vh - 78px));
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
@@ -102,6 +102,14 @@ ul a {
     margin: 0 auto;
     padding-top: 25px;
     position: relative;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 #right-shifted-content {
@@ -228,9 +236,11 @@ h1 {
 
 /* TWITCH LIVE STREAM */
 #twitch-stream {
+    /*margin: 0 auto;*/
     text-align: center;
+    position: relative;
 }
 
 #twitch-stream a {
-    text-align: center;
+    margin: 0 auto;
 }
