@@ -8,9 +8,13 @@ body, html {
 }
 
 * {
-    -webkit-transition: 0.1s;
+/*    -webkit-transition: 0.1s;
     -o-transition: 0.1s;
     transition: 0.1s;
+*/}
+
+th {
+    font-weight: normal;
 }
 
 .img-scaled-wh {
@@ -99,27 +103,23 @@ h1 {
 }
 
 .match-table-head {
-    background-color: #BBBDBD;
+    background-color: black;
     font-size: 1em;
+    color: white;
 }
 
 .match-table-head-row th {
     padding: 1em;
 }
 
-.match-table-body {
-    padding: 2em;
-    /*border: 1px solid #ccc;*/
-}
-
 .match-table-row {
     border-bottom: 1px solid #ccc;
+    opacity: 0.9;
 }
 
 /* TODO find pretty and consistent way to highlight */
 .match-table-row:hover {
-    /*background-color: #EFEFEF;*/
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .match-table-row td {
@@ -127,23 +127,22 @@ h1 {
 }
 
 .blue {
-    background-color: #9ED5E8;
+    background-color: #363895;
+    color: white;
 }
 
 .gold {
-    background-color: #FFFAB1;
+    background-color: #c7aa36;
+    color: white;
 }
 
 .blue.highlighted {
-    background-color: #48B7E3;
+    background-color: #1B1481;
 }
 
 .gold.highlighted {
-    background-color: #FFF545;
-}
+    background-color: #E5BF31;
 
-.highlighted {
-    background-color: orange;
 }
 
 
