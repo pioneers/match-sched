@@ -20,6 +20,7 @@ th {
 .img-scaled-wh {
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .clearfix {
@@ -27,12 +28,27 @@ th {
     zoom: 1;
 }
 
+.left-aligned {
+    text-align: left;
+}
+
 /*===================================================*/
 
-/* HEADER/TAB BAR */
+/* ERROR MESSAGE */
 #error {
-    display: none;
-    color: red;
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: calc(0.5*(100vh - 65px));
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#error-logo {
+    margin: 25px;
 }
 
 ul a {
@@ -44,9 +60,14 @@ ul a {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    padding-bottom: 6px;
+    /*padding-bottom: 6px;*/
     border-bottom: 1px solid #cccccc;
     margin-bottom: 25px;
+    width: 100%;
+
+    /* flexbox to make the list seem prettier */
+    display: flex;
+    justify-content: space-between;
 }
 
 .tab-item {
@@ -76,20 +97,44 @@ ul a {
     border-bottom: 3px solid #231F5A;
 }
 
-#main-content {
-    max-width: 960px;
-    margin-right: 0;
-    margin-left: 225px;
+.main-content {
+    width: 960px;
+    margin: 0 auto;
     padding-top: 25px;
+    position: relative;
+}
+
+#right-shifted-content {
+    margin-right: 0;
+    margin-left: 255px;
+}
+
+#header {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 h1 {
     margin-top: 0;
 }
 
+#logo {
+    height: 2em;
+    width: 2em;
+    margin: 3px 5px;
+    float: left;
+    position: relative;
+    top: 50%;
+/*    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+*/}
+
 /* MATCH TABLE STYLES */
 
-/*TODO ensure that the table is always full width somehow */
 .match-table {
     border-collapse: collapse;
     width: 100%;
@@ -99,7 +144,7 @@ h1 {
 }
 
 .placeholder {
-    opacity: 0;
+    visibility: hidden;
 }
 
 .match-table-head {
@@ -117,7 +162,6 @@ h1 {
     opacity: 0.9;
 }
 
-/* TODO find pretty and consistent way to highlight */
 .match-table-row:hover {
     opacity: 1;
 }
@@ -143,6 +187,10 @@ h1 {
 .gold.highlighted {
     background-color: #E5BF31;
 
+}
+
+.current-match td {
+    font-weight: bold;
 }
 
 

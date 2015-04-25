@@ -9,15 +9,14 @@
     <!-- FONT AWESOME -->
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="assets/font-awesome-4.3.0/css/font-awesome.min.css">
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.11/xlsx.core.min.js"></script> -->
     <!-- JQUERY -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script> -->
     <!-- TABLETOP -->
     <script type="text/javascript" src="assets/js/tabletop/tabletop.js"></script>
     <!-- CUSTOM SCRIPT -->
-    <script type="text/javascript" src="assets/js/match_sched.js"></script>
+    <script type="text/javascript" src="assets/js/qual.js"></script>
 
+    <!-- CSS/STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,400" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="assets/css/match_sched.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
@@ -32,37 +31,22 @@
     </div>
 
     <!-- CONTENT -->
-    <div id="main-content">
-      <div id="header">
-        <!-- <img src="pie_logo.png" id="logo"> -->
+    <div class="main-content" id="right-shifted-content">
+<!--       <div id="header">
+        <div id="logo">
+          <img src="assets/img/pie_logo.png" class="img-scaled-wh">
+        </div>
         <h1>Qualification Matches</h1>
-      </div>
-
-<!--       <div id = "challonge">
-        <iframe src="https://challonge.com/wkc3oiks/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-      </div> 
-      <div id = "sidebar">
-        <div class = "logo">
-          <img src="https://www.google.com/a/pioneers.berkeley.edu/images/logo.gif?alpha=1&service=google_default" alt="Pioneers in Engineering">
-        </div>
-        <div class = "title">
-          PiE Competition 2015
-        </div>
       </div>
  -->
       <ul id="tab-bar">
         <li class="current tab-item"><a href="qual.html">Qualification Matches</a></li>
         <li class="tab-item"><a href="elim.html">Elimination Matches</a></li>
-        <li class="tab-item"><a href="ranking.html">Team Rankings</a></li>
-        <li class="tab-item"><a href="live.html">Live Stream</a></li>
-        <li class="tab-item"><a href="live.html">My Team's Stats</a></li>
+        <li class="tab-item"><a href="rank.html">Team Rankings</a></li>
+        <li class="tab-item"><a href="https://script.google.com/a/macros/pioneers.berkeley.edu/s/AKfycbyiAhXGsl9V-zQfgV9S82S98ETnSybtGZPr_xVXhzIm0YfPpCA/exec">My Team's Stats <i class="fa fa-external-link"></i></a></li>
         <li class="tab-item"><a href="bracket.html">Tournament Brackets</a></li>
+        <li class="tab-item"><a href="live.html">Live Stream</a></li>
       </ul>
-
-      <div id="error">
-        Sorry, there was an error. Please try again later.
-      </div>
-
 
       <table class="match-table" id="qual-table">
         <thead class="match-table-head">
@@ -75,16 +59,6 @@
           </tr>
         </thead>
 
-<!--         <tfoot>
-          <tr>
-            <td>Match</td>
-            <td>Time</td>
-            <td colspan="2">Blue Alliance</td>
-            <td>Score</td>
-            <td colspan="2">Gold Alliance</td>
-          </tr>
-        </tfoot>
- -->
         <tbody class="match-table-body">
           <tr class="placeholder match-table-row">
             <td class="match-table-cell">1</td>

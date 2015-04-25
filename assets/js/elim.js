@@ -35,18 +35,31 @@ function displayData(data, tabletop) {
   }
 
   // qualification match data
-  var qualMatches = qualData.all();
-  for (var i = 0; i < qualMatches.length; i ++) {
-    $("#qual-table > tbody:last").append("<tr class='match-table-row'>" + // add a new table row
-      "<td>" + qualMatches[i]['MatchNumber'] + "</td>" + //match number
-      "<td>" + qualMatches[i]['MatchTime'] + "</td>" + // match time
-      "<td class='blue team" + qualMatches[i]['Blue1Number'] + "cell'>" + qualMatches[i]['Blue1Number'] + ": " + qualMatches[i]['Blue1Name'] + "</td>" + // blue 1; e.g. team1cell
-      "<td class='blue team" + qualMatches[i]['Blue2Number'] + "cell'>" + qualMatches[i]['Blue2Number'] + ": " + qualMatches[i]['Blue2Name'] + "</td>" + // blue 2
-      "<td>" + qualMatches[i]['BlueScore'] + "/" + qualMatches[i]['GoldScore'] + "</td>" + // score
-      "<td class='gold team" + qualMatches[i]['Gold1Number'] + "cell'>" + qualMatches[i]['Gold1Number'] + ": " + qualMatches[i]['Gold1Name'] + "</td>" + // gold 1
-      "<td class='gold team" + qualMatches[i]['Gold2Number'] + "cell'>" + qualMatches[i]['Gold2Number'] + ": " + qualMatches[i]['Gold2Name'] + "</td>" + // gold 2
+  var elimMatches = elimData.all();
+  for (var i = 0; i < elimMatches.length; i ++) {
+    $("#elim-table > tbody:last").append("<tr class='match-table-row'>" + // add a new table row
+      "<td>" + elimMatches[i]['MatchNumber'] + "</td>" + //match number
+      "<td>" + elimMatches[i]['MatchTime'] + "</td>" + // match time
+      "<td class='blue team" + elimMatches[i]['Blue1Number'] + "cell'>" + elimMatches[i]['Blue1Number'] + ": " + elimMatches[i]['Blue1Name'] + "</td>" + // blue 1; e.g. team1cell
+      "<td class='blue team" + elimMatches[i]['Blue2Number'] + "cell'>" + elimMatches[i]['Blue2Number'] + ": " + elimMatches[i]['Blue2Name'] + "</td>" + // blue 2
+      "<td>" + elimMatches[i]['BlueScore'] + "/" + elimMatches[i]['GoldScore'] + "</td>" + // score
+      "<td class='gold team" + elimMatches[i]['Gold1Number'] + "cell'>" + elimMatches[i]['Gold1Number'] + ": " + elimMatches[i]['Gold1Name'] + "</td>" + // gold 1
+      "<td class='gold team" + elimMatches[i]['Gold2Number'] + "cell'>" + elimMatches[i]['Gold2Number'] + ": " + elimMatches[i]['Gold2Name'] + "</td>" + // gold 2
       "</tr>");
   }
+
+  // boldface the current match, if there is one
+  try {
+    for (var i = 0; i < elimMatches.length; i ++) {
+      console.log("Iterating through loop:", i);
+      console.log("current match data:", elimMatches[i]['CurrentMatch']);
+      var nthChild = elimMatches[i]['CurrentMatch'];
+      if (nthChild && nthChild == nthChild) {
+        console.log("found a row:", nthChild);
+        $("#elim-table tr:nth-child(" + i+1 + ")").addClass("current-match");
+      }
+    }
+  } catch(e) {}
 };
 
 /* -------- DOCUMENT READY FUNCTION -------- */
