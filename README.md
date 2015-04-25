@@ -1,6 +1,7 @@
 #TODO
 
 ##Essential
+- **PROGRAM GOOGLE SPREADSHEET**
 - ~~Elimination matches~~
 - ~~Challonge bracket tab~~
     + ~~Fix Challonge bracket tab to include "not available" message~~
