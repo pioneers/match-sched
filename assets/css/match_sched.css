@@ -157,6 +157,7 @@ h1 {
     background-color: #F2F2F2;
     position: fixed;
     overflow-y: scroll;
+    z-index: 10;
 }
 
 #team-sidebar-title {
