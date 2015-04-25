@@ -204,6 +204,10 @@ h1 {
     font-weight: bold;
 }
 
+.current-match::before {
+    
+}
+
 
 /* TEAM NAMES SIDEBAR */
 

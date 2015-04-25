@@ -10,6 +10,7 @@
 - Clear button for team selection buttons
 - ~~**Indication of current match**~~
 - ~~**Add Twitch stream**~~
+- **Fix code so that match table is ALWAYS centered**
 
 ##Nice to have
 - ~~GET TEAM HIGHLIGHTING TO WORK~~

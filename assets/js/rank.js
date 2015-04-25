@@ -10,6 +10,8 @@ var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/16V8AS5EyBu
 // Fills in the table and sidebar with the most up-to-date information from the Google spreadsheet.
 function displayData(data, tabletop) {
 
+  // console.log(data);
+
   var schoolData = data[schoolSheetName]; // Tabletop object containing qualification matches
   var qualData = data[qualSheetName]; // Tabletop object containing qualification matches
   var elimData = data[elimSheetName]; // Tabletop object containing qualification matches
@@ -39,8 +41,8 @@ function displayData(data, tabletop) {
   for (var i = 0; i < rankings.length; i ++) {
     $("#rank-table > tbody:last").append("<tr class='match-table-row'>" + // add a new table row
       "<td>" + rankings[i]['Rank'] + "</td>" + // team number
+      // "<td>" + String(i+1) + "</td>" + // team number
       "<td class='left-aligned'>" + rankings[i]['TeamNumber'] + ": " + rankings[i]['TeamName'] + "</td>" + // team name
-      // "<td>" + rankings[i]['TeamName'] + "</td>" + 
       "<td>" + rankings[i]['RankingCalories'] + "</td>" + 
       "<td>" + rankings[i]['QualificationCalories'] + "</td>" + 
       "<td>" + rankings[i]['Wins'] + "</td>" + 
@@ -57,7 +59,7 @@ $(document).ready(function () {
     key: public_spreadsheet_url,
     callback: displayData,
     simpleSheet: false,
-    debug: true
+    debug: true,
   });
 
   $("#rank-table").stickyTableHeaders();
