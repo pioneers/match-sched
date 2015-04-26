@@ -58,12 +58,13 @@ function displayData(data, tabletop) {
   // boldface the current match, if there is one
   try {
     for (var i = 0; i < elimMatches.length; i ++) {
-      console.log("Iterating through loop:", i);
-      console.log("current match data:", elimMatches[i]['CurrentMatch']);
       var nthChild = elimMatches[i]['CurrentMatch'];
       if (nthChild && nthChild == nthChild) {
         console.log("found a row:", nthChild);
         $("#elim-table tr:nth-child(" + String(i+1) + ")").attr("id", "current-match");
+      }
+      else {
+        $("#elim-table tr:nth-child(" + String(i+1) + ")").removeAttr("id");
       }
     }
   } catch(e) {}
@@ -115,8 +116,7 @@ $(document).ready(function () {
 
   $("#jump-to-match").click(function() {
     $('html,body').animate({
-        scrollTop: $("#current-match").offset().top - 50},
-        'slow');
+        scrollTop: $("#current-match").offset().top - 50}, 'slow');
   });
 });
 
