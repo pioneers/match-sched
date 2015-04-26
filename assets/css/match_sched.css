@@ -218,6 +218,16 @@ h1 {
 #jump-to-match {
     text-decoration: none;
     color: #231F5A;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+}
+
+#jump-to-match:hover {
+    color: #363895;
 }
 
 #current-match td {
