@@ -46,6 +46,7 @@ th {
     width: 600px;
     margin: 0 auto;
     text-align: center;
+    line-height: 1.7;
     position: relative;
     top: calc(0.5*(100vh - 78px));
     -webkit-transform: translateY(-50%);
