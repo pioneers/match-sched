@@ -70,6 +70,12 @@ ul a {
     line-height: 1.7;
 }
 
+#congrats {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5em;
+}
+
 /* TAB BAR */
 
 #tab-bar {
