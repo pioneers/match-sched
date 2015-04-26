@@ -210,8 +210,12 @@ h1 {
 }
 
 .current-match::before {
-    
-}
+/*    font-size: 0.2em;
+    color: #84DF56;
+    position: absolute;
+    left: -20px;
+    content: "CURRENT";
+*/}
 
 
 /* TEAM NAMES SIDEBAR */
