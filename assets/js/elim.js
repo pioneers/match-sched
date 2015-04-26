@@ -63,7 +63,7 @@ function displayData(data, tabletop) {
       var nthChild = elimMatches[i]['CurrentMatch'];
       if (nthChild && nthChild == nthChild) {
         console.log("found a row:", nthChild);
-        $("#elim-table tr:nth-child(" + String(i+1) + ")").addClass("current-match");
+        $("#elim-table tr:nth-child(" + String(i+1) + ")").attr("id", "current-match");
       }
     }
   } catch(e) {}
@@ -111,6 +111,12 @@ $(document).ready(function () {
       var teamCells = $("." + $(this).attr("id") + "cell");
         teamCells.addClass("highlighted");
     }
+  });
+
+  $("#jump-to-match").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#current-match").offset().top - 50},
+        'slow');
   });
 });
 
