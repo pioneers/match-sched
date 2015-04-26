@@ -63,7 +63,7 @@ function displayData(data, tabletop) {
       var nthChild = elimMatches[i]['CurrentMatch'];
       if (nthChild && nthChild == nthChild) {
         console.log("found a row:", nthChild);
-        $("#elim-table tr:nth-child(" + i+1 + ")").addClass("current-match");
+        $("#elim-table tr:nth-child(" + String(i+1) + ")").addClass("current-match");
       }
     }
   } catch(e) {}
