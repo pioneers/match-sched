@@ -37,6 +37,12 @@ function displayData(data, tabletop) {
   // qualification match data
   var elimMatches = elimData.all();
   for (var i = 0; i < elimMatches.length; i ++) {
+    // handle lunch in the matches
+    if (elimMatches[i]['MatchNumber'].toLowerCase() == "lunch") {
+      $("#elim-table > tbody:last").append("<tr class='match-table-row'>" + // add a new table row
+        "<td colspan='7'>Lunch</td>" +
+      "</tr>");
+    } else {
     $("#elim-table > tbody:last").append("<tr class='match-table-row'>" + // add a new table row
       "<td>" + elimMatches[i]['MatchNumber'] + "</td>" + //match number
       "<td>" + elimMatches[i]['MatchTime'] + "</td>" + // match time
@@ -46,6 +52,7 @@ function displayData(data, tabletop) {
       "<td class='gold team" + elimMatches[i]['Gold1Number'] + "cell'>" + elimMatches[i]['Gold1Number'] + ": " + elimMatches[i]['Gold1Name'] + "</td>" + // gold 1
       "<td class='gold team" + elimMatches[i]['Gold2Number'] + "cell'>" + elimMatches[i]['Gold2Number'] + ": " + elimMatches[i]['Gold2Name'] + "</td>" + // gold 2
       "</tr>");
+    }
   }
 
   // boldface the current match, if there is one
