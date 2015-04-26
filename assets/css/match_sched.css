@@ -46,7 +46,7 @@ th {
     width: 600px;
     margin: 0 auto;
     text-align: center;
-    line-height: 1.7;
+    /*line-height: 1.7;*/
     position: relative;
     top: calc(0.5*(100vh - 78px));
     -webkit-transform: translateY(-50%);
@@ -63,6 +63,14 @@ ul a {
     text-decoration: none;
     color: inherit;
 }
+
+/* TEXT ON PAGE */
+.body-text {
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* TAB BAR */
 
 #tab-bar {
     list-style-type: none;
@@ -204,6 +212,11 @@ h1 {
 .gold.highlighted {
     background-color: #E5BF31;
 
+}
+
+#jump-to-match {
+    text-decoration: none;
+    color: #231F5A;
 }
 
 #current-match td {

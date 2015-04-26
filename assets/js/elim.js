@@ -112,6 +112,12 @@ $(document).ready(function () {
         teamCells.addClass("highlighted");
     }
   });
+
+  $("#jump-to-match").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#current-match").offset().top - 50},
+        'slow');
+  });
 });
 
 
