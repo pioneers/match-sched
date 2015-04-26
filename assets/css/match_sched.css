@@ -206,7 +206,7 @@ h1 {
 
 }
 
-.current-match td {
+#current-match td {
     font-weight: bold;
 }
 
