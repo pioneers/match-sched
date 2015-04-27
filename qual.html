@@ -7,7 +7,6 @@
     <title>Qualification Matches</title>
 
     <!-- FONT AWESOME -->
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="assets/font-awesome-4.3.0/css/font-awesome.min.css">
     <!-- JQUERY -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -23,17 +22,23 @@
     <link rel="stylesheet" type="text/css" href="assets/css/match_sched.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
   </head>
+
   <body>
     <!-- SIDEBAR -->
     <div id="team-sidebar">
-      <div id="team-sidebar-title">Teams</div>
+      <div class="clearfix" id="team-sidebar-title-wrapper">
+        <span id="team-sidebar-title">Filter by Teams</span>
+      </div>
       <div id="team-sidebar-content">
         <div class="placeholder team-link">1: Albany</div>
       </div>
     </div>
 
     <!-- CONTENT -->
-    <div class="right-shifted main">
+    <div class="main">
+      <a href="#" id="filter-button">
+        <i class="fa fa-filter fa-2x"></i>
+      </a>
       <div id="header">
         <div id="logo">
           <img src="assets/img/pie_logo.png" class="img-scaled-wh">
@@ -41,15 +46,16 @@
         <h1>PiE Robotics Competition 2015</h1>
       </div>
 
+      <!-- NAV BAR -->
       <ul id="tab-bar">
         <li class="current tab-item"><a href="qual.html">Qualification Matches</a></li>
         <li class="tab-item"><a href="elim.html">Elimination Matches</a></li>
         <li class="tab-item"><a href="rank.html">Team Rankings</a></li>
-        <li class="tab-item"><a href="https://script.google.com/a/macros/pioneers.berkeley.edu/s/AKfycbyiAhXGsl9V-zQfgV9S82S98ETnSybtGZPr_xVXhzIm0YfPpCA/exec">My Team's Stats <i class="fa fa-external-link"></i></a></li>
         <li class="tab-item"><a href="bracket.html">Tournament Brackets</a></li>
         <li class="tab-item"><a href="live.html">Live Stream</a></li>
       </ul>
 
+      <!-- TABLE -->
       <table class="match-table" id="qual-table">
         <thead class="match-table-head">
           <tr class="match-table-head-row">
@@ -60,7 +66,6 @@
             <th class="match-table-head-cell" colspan="2">Gold Alliance</th>
           </tr>
         </thead>
-
         <tbody class="match-table-body">
           <tr class="placeholder match-table-row">
             <td class="match-table-cell">1</td>
@@ -72,9 +77,7 @@
             <td class="gold match-table-cell">11: Team Awesome</td>
           </tr>
         </tbody>
-
       </table>
     </div>
-
   </body>
 </html>

@@ -7,16 +7,6 @@ body, html {
     height: 100%;
 }
 
-* {
-/*    -webkit-transition: 0.1s;
-    -o-transition: 0.1s;
-    transition: 0.1s;
-*/}
-
-th {
-    font-weight: normal;
-}
-
 .img-scaled-wh {
     height: 100%;
     width: 100%;
@@ -37,11 +27,6 @@ th {
 
 .left-aligned {
     text-align: left;
-}
-
-.right-shifted {
-    margin-right: 0;
-    margin-left: 255px;
 }
 
 /*===================================================*/
@@ -134,17 +119,11 @@ ul a {
     margin: 0 auto;
     padding-top: 25px;
     position: relative;
-/*    height: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-*/}
+}
 
 .right-shifted {
-    width: calc(100% - 300px);
     margin-right: 0;
-    margin-left: 250px;
-    
+    margin-left: 260px;
 }
 
 #header {
@@ -165,11 +144,7 @@ h1 {
     float: left;
     position: relative;
     top: 50%;
-/*    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-*/}
+}
 
 /* MATCH TABLE STYLES */
 
@@ -216,7 +191,7 @@ h1 {
 }
 
 .gold {
-    background-color: #DEBC2E;
+    background-color: #D6B948;
     color: white;
 }
 
@@ -225,12 +200,13 @@ h1 {
 }
 
 .gold.highlighted {
-    background-color: #E5BF31;
+    background-color: #F6C528;
 
 }
 
 #jump-to-match {
     text-decoration: none;
+    text-align: center;
     color: #231F5A;
     cursor: pointer;
     margin-bottom: 10px;
@@ -248,16 +224,20 @@ h1 {
     font-weight: bold;
 }
 
-.current-match::before {
-/*    font-size: 0.2em;
-    color: #84DF56;
-    position: absolute;
-    left: -20px;
-    content: "CURRENT";
-*/}
-
 
 /* TEAM NAMES SIDEBAR */
+
+#filter-button {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    color: inherit;
+}
+
+.right-shifted#filter-button {
+    margin: 0;
+    left: 225px;
+}
 
 #team-sidebar {
     box-sizing: border-box;
@@ -268,12 +248,26 @@ h1 {
     position: fixed;
     overflow-y: scroll;
     z-index: 10;
+    top: 0;
+    left: -200px;
+
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-#team-sidebar-title {
+#team-sidebar-title-wrapper {
     border-bottom: 1px dotted #cccccc;
     font-size: 1em;
     margin-bottom: 10px;
+}
+
+#team-sidebar-title {
+    float: left;
+}
+
+#team-sidebar-close {
+    float: right;
 }
 
 .team-link {
@@ -310,7 +304,6 @@ h1 {
     }
 
     .right-shifted {
-        margin-right: 0;
         margin-right: calc(0.5*(100vw - 1160px));
     }
 
