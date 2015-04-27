@@ -60,7 +60,6 @@ function displayData(data, tabletop) {
     for (var i = 0; i < elimMatches.length; i ++) {
       var nthChild = elimMatches[i]['CurrentMatch'];
       if (nthChild && nthChild == nthChild) {
-        console.log("found a row:", nthChild);
         $("#elim-table tr:nth-child(" + String(i+1) + ")").attr("id", "current-match");
       }
       else {
@@ -79,8 +78,6 @@ $(document).ready(function () {
     simpleSheet: false,
     debug: true
   });
-
-  $("#elim-table").stickyTableHeaders();
 
   // highlight appropriate cells in the table when hovering over team names in sidebar
   $("#team-sidebar-content").on("mouseenter", ".team-link", function(event) {
@@ -113,6 +110,30 @@ $(document).ready(function () {
         teamCells.addClass("highlighted");
     }
   });
+
+  // close the team sidebar if filter button is clicked
+  $("#filter-button").click(function() {
+    if (!($(".main").hasClass("right-shifted"))) {
+      $(".main").addClass("right-shifted");
+      $(this).animate({
+        left: "+=200",
+      }, 200);
+      $("#team-sidebar").animate({
+        left: "+=200",
+      }, 200);
+    } else {
+      $("#team-sidebar").animate({
+        left: "-=200",
+      }, 200);
+      $(this).animate({
+        left: "-=200",
+      }, 200);
+      $(".main").removeClass("right-shifted");
+    }
+  });
+
+  $("#elim-table").stickyTableHeaders();
+
 
   $("#jump-to-match").click(function() {
     $('html,body').animate({

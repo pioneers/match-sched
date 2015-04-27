@@ -73,8 +73,6 @@ $(document).ready(function () {
     debug: true
   });
 
-  $("#qual-table").stickyTableHeaders();
-
   // highlight appropriate cells in the table when hovering over team names in sidebar
   $("#team-sidebar-content").on("mouseenter", ".team-link", function(event) {
     event.preventDefault();
@@ -106,6 +104,30 @@ $(document).ready(function () {
         teamCells.addClass("highlighted");
     }
   });
+
+  // close the team sidebar if filter button is clicked
+  $("#filter-button").click(function() {
+    if (!($(".main").hasClass("right-shifted"))) {
+      $(".main").addClass("right-shifted");
+      $(this).animate({
+        left: "+=200",
+      }, 200);
+      $("#team-sidebar").animate({
+        left: "+=200",
+      }, 200);
+    } else {
+      $("#team-sidebar").animate({
+        left: "-=200",
+      }, 200);
+      $(this).animate({
+        left: "-=200",
+      }, 200);
+      $(".main").removeClass("right-shifted");
+    }
+  });
+
+  $("#qual-table").stickyTableHeaders();
+
 });
 
 
