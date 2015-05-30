@@ -12,10 +12,8 @@ function displayData(data, tabletop) {
 
   // console.log(data);
 
-  var schoolData = data[schoolSheetName]; // Tabletop object containing qualification matches
-  var qualData = data[qualSheetName]; // Tabletop object containing qualification matches
-  var elimData = data[elimSheetName]; // Tabletop object containing qualification matches
-  var rankData = data[rankSheetName]; // Tabletop object containing qualification matches
+  var schoolData = data[schoolSheetName]; // Tabletop object containing school data
+  var rankData = data[rankSheetName]; // Tabletop object containing ranking data
 
   var numSchools = schoolData.elements.length;
   var schools = schoolData.all();
