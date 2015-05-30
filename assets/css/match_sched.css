@@ -204,6 +204,10 @@ h1 {
 
 }
 
+.yt-link {
+    color: inherit;
+}
+
 #jump-to-match {
     text-decoration: none;
     text-align: center;

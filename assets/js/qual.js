@@ -38,6 +38,7 @@ function displayData(data, tabletop) {
   var qualMatches = qualData.all();
   for (var i = 0; i < qualMatches.length; i ++) {
     $("#qual-table > tbody:last").append("<tr class='match-table-row'>" + // add a new table row
+      "<td>" + "<a class='yt-link' target='_blank' href='" + qualMatches[i]['VideoURL'] + "'>" + "<i class='fa fa-youtube-play fa-2x'></i></a>" + "</td>" + //match number
       "<td>" + qualMatches[i]['MatchNumber'] + "</td>" + //match number
       "<td>" + qualMatches[i]['MatchTime'] + "</td>" + // match time
       "<td class='blue team" + qualMatches[i]['Blue1Number'] + "cell'>" + qualMatches[i]['Blue1Number'] + ": " + qualMatches[i]['Blue1Name'] + "</td>" + // blue 1; e.g. team1cell

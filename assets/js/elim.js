@@ -10,10 +10,8 @@ var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/16V8AS5EyBu
 // Fills in the table and sidebar with the most up-to-date information from the Google spreadsheet.
 function displayData(data, tabletop) {
 
-  var schoolData = data[schoolSheetName]; // Tabletop object containing qualification matches
-  var qualData = data[qualSheetName]; // Tabletop object containing qualification matches
-  var elimData = data[elimSheetName]; // Tabletop object containing qualification matches
-  var rankData = data[rankSheetName]; // Tabletop object containing qualification matches
+  var schoolData = data[schoolSheetName]; // Tabletop object containing school data
+  var elimData = data[elimSheetName]; // Tabletop object containing elimination matches
 
   var numSchools = schoolData.elements.length;
   var schools = schoolData.all();
@@ -44,6 +42,7 @@ function displayData(data, tabletop) {
       "</tr>");
     } else {
     $("#elim-table > tbody:last").append("<tr class='match-table-row'>" + // add a new table row
+      "<td>" + "<a class='yt-link' target='_blank' href='" + elimMatches[i]['VideoURL'] + "'>" + "<i class='fa fa-youtube-play fa-2x'></i></a>" + "</td>" + //match number
       "<td>" + elimMatches[i]['MatchNumber'] + "</td>" + //match number
       "<td>" + elimMatches[i]['MatchTime'] + "</td>" + // match time
       "<td class='blue team" + elimMatches[i]['Blue1Number'] + "cell'>" + elimMatches[i]['Blue1Number'] + ": " + elimMatches[i]['Blue1Name'] + "</td>" + // blue 1; e.g. team1cell
